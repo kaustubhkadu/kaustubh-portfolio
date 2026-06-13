@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Design & Hardware Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+            color: #222;
+        }
+        p.subtitle {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #666;
+        }
+        .project-highlights {
+            margin-top: 15px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+        .download-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #0056b3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .download-btn:hover {
+            background-color: #004494;
+        }
+        .pdf-container {
+            width: 100%;
+            max-width: 1000px;
+            height: 85vh; /* Takes up 85% of the viewport height */
+            margin: 40px auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Hide the iframe on small screens and encourage downloading */
+        @media (max-width: 768px) {
+            .pdf-container {
+                display: none;
+            }
+            .mobile-notice {
+                display: block;
+                margin: 40px 20px;
+                text-align: center;
+                font-size: 1.1rem;
+            }
+        }
+        /* Hide the mobile notice on desktop */
+        @media (min-width: 769px) {
+            .mobile-notice {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <p class="subtitle">Hardware Developer & Industrial Designer | Bengaluru</p>
+      
+
+        <a href="Kaustubh Portfolio Fast View - Jun 2026.pdf" class="download-btn" download>Download Full Portfolio (PDF)</a>
+    </header>
+
+    <div class="mobile-notice">
+        <p>For the best viewing experience on mobile, please download the PDF using the button above.</p>
+    </div>
+
+    <div class="pdf-container">
+        <iframe src="Kaustubh Portfolio Fast View - Jun 2026.pdf#toolbar=0" title="Portfolio PDF">
+            This browser does not support PDFs. Please download the PDF to view it.
+        </iframe>
+    </div>
+
+</body>
+</html>
