@@ -3,80 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Industrial Design & Product Development Portfolio</title>
+    <title>Industrial Design & Hardware Portfolio</title>
     <style>
+        /* Import both Zalando Sans and Zalando Sans Expanded */
+        @import url('https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap');
+
+        /* Modern Color Palette & Variables */
+        :root {
+            --primary-color: #111827;
+            --accent-color: #2563eb;
+            --bg-color: #f9fafb;
+            --card-bg: #ffffff;
+            --text-secondary: #4b5563;
+            --border-color: #e5e7eb;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Apply Zalando Sans to the whole body */
+            font-family: 'Zalando Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.6;
         }
-        header {
+
+        .hero {
+            background: var(--card-bg);
+            padding: 70px 20px 50px;
             text-align: center;
-            padding: 40px 20px;
-            width: 100%;
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border-color);
         }
+
         h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5rem;
-            color: #222;
+            /* Apply Zalando Sans Expanded to the main heading */
+            font-family: 'Zalando Sans Expanded', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 10px;
+            letter-spacing: -0.03em;
         }
-        p.subtitle {
-            margin: 0;
+
+        .subtitle {
             font-size: 1.2rem;
-            color: #666;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 25px;
         }
-        .project-highlights {
-            margin-top: 15px;
-            font-size: 0.95rem;
-            color: #555;
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
         }
+
+        .tag {
+            background-color: var(--bg-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            font-weight: 500;
+        }
+
         .download-btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #0056b3;
+            background-color: var(--accent-color);
             color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+            transition: all 0.3s ease;
         }
+
         .download-btn:hover {
-            background-color: #004494;
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
-        .pdf-container {
-            width: 100%;
-            max-width: 1000px;
-            height: 85vh; /* Takes up 85% of the viewport height */
-            margin: 40px auto;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
         }
+
+        .pdf-wrapper {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            height: 80vh;
+            border: 1px solid var(--border-color);
+        }
+
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            background-color: #f0f0f0;
         }
         
-        /* Hide the iframe on small screens and encourage downloading */
         @media (max-width: 768px) {
-            .pdf-container {
+            .pdf-wrapper {
                 display: none;
+            }
+            h1 {
+                font-size: 2.2rem;
             }
             .mobile-notice {
                 display: block;
                 margin: 40px 20px;
                 text-align: center;
                 font-size: 1.1rem;
+                color: var(--text-secondary);
             }
         }
-        /* Hide the mobile notice on desktop */
+        
         @media (min-width: 769px) {
             .mobile-notice {
                 display: none;
@@ -86,22 +134,27 @@
 </head>
 <body>
 
-    <header>
+    <header class="hero">
         <h1>My Portfolio</h1>
-        <p class="subtitle">Hardware Developer & Industrial Designer | Bengaluru</p>
-      
+        <div class="subtitle">Hardware Developer & Industrial Designer | Bengaluru</div>
+        
+        <div class="project-tags">
+            <span class="tag">Cimple Timer Plug</span>
+            <span class="tag">Clarity Air Purifier</span>
+            <span class="tag">Medical Devices</span>
+        </div>
 
-        <a href="Kaustubh Portfolio Fast View - Jun 2026.pdf" class="download-btn" download>Download Full Portfolio (PDF)</a>
+        <a href="Kaustubh Portfolio Fast View - Aug 2026.pdf" class="download-btn" download>Download Full Portfolio</a>
     </header>
 
-    <div class="mobile-notice">
-        <p>For the best viewing experience on mobile, please download the PDF using the button above.</p>
-    </div>
+    <div class="container">
+        <div class="mobile-notice">
+            <p>For the best viewing experience on mobile, please download the PDF using the button above.</p>
+        </div>
 
-    <div class="pdf-container">
-        <iframe src="Kaustubh Portfolio Fast View - Jun 2026.pdf#toolbar=0" title="Portfolio PDF">
-            This browser does not support PDFs. Please download the PDF to view it.
-        </iframe>
+        <div class="pdf-wrapper">
+            <iframe src="Kaustubh Portfolio Fast View - Aug 2026.pdf#toolbar=0" title="Portfolio PDF"></iframe>
+        </div>
     </div>
 
 </body>
